@@ -1,10 +1,3 @@
----
-title: "Adding Zero Trust Tests"
-date: 2020-07-14T10:19:08+03:00
-draft: false
-weight: 100
----
-
 ## How do I add a new Zero Trust test to the Monkey?
 
 Assuming the Infection Monkey agent is already sending the relevant telemetry, you'll need to add the test in two places.

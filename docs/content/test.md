@@ -1,6 +1,7 @@
 ---
 title: "Test Page"
 excerpt: "Page"
+category: 62ecd535b830b707c3968018
 ---
 ## How do I add a new Zero Trust test to the Monkey -Test
 

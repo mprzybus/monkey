@@ -1,4 +1,4 @@
-## How do I add a new Zero Trust test to the Monkey?
+## How do I add a new Zero Trust test to the Monkey -Test
 
 Assuming the Infection Monkey agent is already sending the relevant telemetry, you'll need to add the test in two places.
 

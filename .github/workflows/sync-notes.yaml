@@ -21,7 +21,7 @@ jobs:
         run: npm install slugify
 
       - name: Split Changelog into MD files
-        run: node scripts/split-changelog.js
+        run: node scripts/split.js
 
       - name: Publish Changelogs to ReadMe
         uses: readmeio/rdme@v10

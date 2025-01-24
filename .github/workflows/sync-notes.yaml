@@ -1,0 +1,29 @@
+name: Sync Changelog to ReadMe
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  sync-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install slugify
+
+      - name: Split Changelog into MD files
+        run: node scripts/split-changelog.js
+
+      - name: Publish Changelogs to ReadMe
+        uses: readmeio/rdme@v10
+        with:
+          rdme: 'changelogs ./temp-changelogs --key=${{ secrets.RDME_KEY }}'

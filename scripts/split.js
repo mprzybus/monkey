@@ -14,6 +14,7 @@ const slugify = require('slugify');
 const CHANGELOG_PATH = path.join(__dirname, '..', 'CHANGELOG.md');
 const OUTPUT_DIR = path.join(__dirname, '..', 'temp-changelogs');
 
+// Make sure the output directory exists or create it
 if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
@@ -61,6 +62,7 @@ entries.forEach((entry) => {
   // Generate a slug from the entire heading text, e.g. "6.6.1 (Dec 20, 2024)"
   const theSlug = slugify(headingText, {
     lower: true,
+    remove: /[*+~.()'"!:@]/g // optional, remove special chars
   });
 
   // The rest of the chunk is the lines except the first heading line

@@ -62,7 +62,7 @@ entries.forEach((entry) => {
   // Generate a slug from the entire heading text, e.g. "6.6.1 (Dec 20, 2024)"
   const theSlug = slugify(headingText, {
     lower: true,
-    remove: /[*+~.()'"!:@]/g // optional, remove special chars
+    remove: /[,*+~.()'"!:@]/g // optional, remove special chars
   });
 
   // The rest of the chunk is the lines except the first heading line
